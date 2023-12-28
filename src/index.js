@@ -11,6 +11,7 @@ import MyCart from "./pages/MyCart";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import ProductEdit from "./pages/ProductEdit";
+import ProductOption from "./pages/ProductOption";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute requireAdmin>
             <NewProduct />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/products/option",
+        element: (
+          <ProtectedRoute requireAdmin>
+            <ProductOption />
           </ProtectedRoute>
         ),
       },

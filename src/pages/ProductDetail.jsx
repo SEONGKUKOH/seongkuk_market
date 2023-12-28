@@ -17,7 +17,7 @@ export default function ProductDetail() {
         description,
         category,
         price,
-        options,
+        // options,
         image1,
         image2,
         image3,
@@ -26,12 +26,12 @@ export default function ProductDetail() {
     },
   } = useLocation();
 
-  const [selected, setSelected] = useState(options && options[0]);
-  const handleSelect = (e) => {
-    setSelected(e.target.value);
-  };
+  // const [selected, setSelected] = useState(options && options[0]);
+  // // const handleSelect = (e) => {
+  // //   setSelected(e.target.value);
+  // };
   const handleClick = (e) => {
-    const product = { id, image, title, price, option: selected, quantity: 1 };
+    const product = { id, image1, title, price, quantity: 1 };
     addOrUpdateToCart(uid, product);
   };
 

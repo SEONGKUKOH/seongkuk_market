@@ -8,7 +8,7 @@ const ICON_CLASS =
 
 export default function CartItem({
   product,
-  product: { id, image, title, option, quantity, price },
+  product: { id, image1, title, quantity, price },
   uid,
 }) {
   const handleMinus = () => {
@@ -21,11 +21,11 @@ export default function CartItem({
   const handleDelete = () => removeFromCart(uid, id);
   return (
     <li className="flex justify-between my-2 items-center">
-      <img className="w-24 md:2-48 rounded-lg" src={image} alt={title} />
+      <img className="w-24 md:2-48 rounded-lg" src={image1} alt={title} />
       <div className="flex-1 flex justify-between ml-4">
         <div>
           <p className="text-lg">{title}</p>
-          <p className="text-2xl font-bold text-brand">{option}</p>
+          {/* <p className="text-2xl font-bold text-brand">{option}</p> */}
           <p>{price}</p>
         </div>
         <div className="text-2xl flex items-center">

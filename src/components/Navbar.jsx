@@ -16,6 +16,14 @@ export default function Navbar() {
         <h1>Shoppy</h1>
       </Link>
       <nav className="flex items-center gap-4 font-semibold">
+        {user && user.isAdmin && (
+          <div className="flex justify-end">
+            <Link to={`/products/option`}>
+              <Button text="option" />
+            </Link>
+          </div>
+        )}
+
         <Link to="/products">Products</Link>
         {user && (
           <Link to="/carts">
