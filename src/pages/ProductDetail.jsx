@@ -100,14 +100,18 @@ export default function ProductDetail() {
       <section className="flex flex-col md:flex-col p-4 justify-center items-center">
         {image2 && (
           <img
-            className="w-3/4 px-4 basis-7/12 m-2 "
+            className="w-3/4 h-1/3 px-4 basis-7/12 m-2 "
             src={image2}
             alt={title}
           />
         )}
 
         {image3 && (
-          <img className="w-3/4 px-4 basis-7/12 m-2" src={image3} alt={title} />
+          <img
+            className="w-3/4 h-1/3 px-4 basis-7/12 m-2"
+            src={image3}
+            alt={title}
+          />
         )}
       </section>
     </>
