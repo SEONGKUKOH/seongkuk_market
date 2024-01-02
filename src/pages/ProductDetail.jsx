@@ -99,7 +99,11 @@ export default function ProductDetail() {
       {/* <section className="flex flex-col md:flex-col p-4 justify-content"> */}
       <section className="flex flex-col md:flex-col p-4 justify-center items-center">
         {image2 && (
-          <img className="w-3/4 px-4 basis-7/12 m-2" src={image2} alt={title} />
+          <img
+            className="w-3/4 px-4 basis-7/12 m-2 "
+            src={image2}
+            alt={title}
+          />
         )}
 
         {image3 && (
