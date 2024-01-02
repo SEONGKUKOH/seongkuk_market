@@ -26,6 +26,8 @@ export default function ProductDetail() {
     },
   } = useLocation();
 
+  const discount = 0.4;
+
   // const [selected, setSelected] = useState(options && options[0]);
   // // const handleSelect = (e) => {
   // //   setSelected(e.target.value);
@@ -68,8 +70,19 @@ export default function ProductDetail() {
         <div className="w-full basis-5/12 flex flex-col p-4">
           <h2 className="text-3xl font-bold py-2 ">{title}</h2>
           <p className="py-4 text-lg">{description}</p>
-          <p className="text-2xl font-bold py-2 border-b border-gray-400">
+          {/* <p className="text-2xl font-bold py-2 border-b border-gray-400">
             ${price}
+          </p> */}
+          <p>
+            <span className="text-4xl">{`$${(price * (1 - discount)).toFixed(
+              0
+            )}`}</span>
+            <span> </span>
+            <span className="line-through text-gray-500">{`    $${price}`}</span>
+            <span> </span>
+            <span className="bg-brand text-white p-2 rounded-sm ">
+              {discount * 100}% off
+            </span>
           </p>
           <div className="flex items-center">
             <label className="text-brand font-bold" htmlFor="select">
@@ -83,13 +96,14 @@ export default function ProductDetail() {
           <Button text="장바구니에 추가" onClick={handleClick} />
         </div>
       </section>
-      <section className="flex flex-col md:flex-col p-4">
+      {/* <section className="flex flex-col md:flex-col p-4 justify-content"> */}
+      <section className="flex flex-col md:flex-col p-4 justify-center items-center">
         {image2 && (
-          <img className="w-full px-4 basis-7/12" src={image2} alt={title} />
+          <img className="w-3/4 px-4 basis-7/12 m-2" src={image2} alt={title} />
         )}
 
         {image3 && (
-          <img className="w-full px-4 basis-7/12" src={image3} alt={title} />
+          <img className="w-3/4 px-4 basis-7/12 m-2" src={image3} alt={title} />
         )}
       </section>
     </>
