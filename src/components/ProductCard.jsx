@@ -32,7 +32,8 @@ export default function ProductCard({
             <span className="text-3xl">{`$${(price * (1 - discount)).toFixed(
               0
             )}`}</span>
-            <span className="line-through">{`    $${price}`}</span>
+            <span> </span>
+            <span className="line-through text-gray-500">{`    $${price}`}</span>
           </p>
         </div>
       </div>
