@@ -6,6 +6,8 @@ export default function ProductCard({
   product: { id, image, title, category, price, image1 },
 }) {
   const navigate = useNavigate();
+  const discount = 0.4;
+
   //   console.log("PRODUCT: ", product);
 
   return (
@@ -23,7 +25,7 @@ export default function ProductCard({
       <div className="mt-2 px-2 text-lg flex justify-between items-center">
         <h3 className="truncate">{title}</h3>
         <p>
-          <span className="text-3xl">{`$${price}`}</span>
+          <span className="text-3xl">{`$${price * (1 - discount)}`}</span>
           <span className="line-through">{`    $${price}`}</span>
         </p>
       </div>
