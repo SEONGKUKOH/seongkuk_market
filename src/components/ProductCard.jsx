@@ -18,16 +18,23 @@ export default function ProductCard({
       className="rounded-lg shadow-md overflow-hidden cursor-pointer"
     >
       {image ? (
-        <img className="w-full" src={image} alt={title} />
+        <img className="w-full h-3/4" src={image} alt={title} />
       ) : (
-        <img className="w-full" src={image1} alt={title} />
+        <img className="w-full h-3/4" src={image1} alt={title} />
       )}
       <div className="mt-2 px-2 text-lg flex justify-between items-center">
         <h3 className="truncate">{title}</h3>
-        <p>
-          <span className="text-3xl">{`$${price * (1 - discount)}`}</span>
-          <span className="line-through">{`    $${price}`}</span>
-        </p>
+        <div>
+          <p className="bg-brand text-white p-2 rounded-sm flex justify-center">
+            {discount * 100}% off
+          </p>
+          <p>
+            <span className="text-3xl">{`$${(price * (1 - discount)).toFixed(
+              0
+            )}`}</span>
+            <span className="line-through">{`    $${price}`}</span>
+          </p>
+        </div>
       </div>
       <p className="mb-2 px-2 text-gray-600">{category}</p>
     </li>
