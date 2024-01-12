@@ -70,6 +70,14 @@ export default function ProductEdit() {
         onChange={(e) => setProduct({ ...product, price: e.target.value })}
       />
       <input
+        type="number"
+        value={product.discount_price || ""}
+        onChange={(e) =>
+          setProduct({ ...product, discount_price: e.target.value })
+        }
+      />
+
+      <input
         type="text"
         value={product.category || ""}
         onChange={(e) => setProduct({ ...product, category: e.target.value })}

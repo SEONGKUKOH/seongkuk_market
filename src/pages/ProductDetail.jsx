@@ -17,6 +17,7 @@ export default function ProductDetail() {
         description,
         category,
         price,
+        discount_price,
         // options,
         image1,
         image2,
@@ -26,7 +27,7 @@ export default function ProductDetail() {
     },
   } = useLocation();
 
-  const discount = 0.4;
+  const discount = parseInt((discount_price / price) * 100, 10);
 
   // const [selected, setSelected] = useState(options && options[0]);
   // // const handleSelect = (e) => {
@@ -58,13 +59,13 @@ export default function ProductDetail() {
           <img className="w-full px-4 basis-7/12" src={image1} alt={title} />
         )}
 
-        {/* {image2 && (
+        {image2 && (
           <img className="w-full px-4 basis-7/12" src={image2} alt={title} />
         )}
 
         {image3 && (
           <img className="w-full px-4 basis-7/12" src={image3} alt={title} />
-        )} */}
+        )}
         {/* <img className="w-full px-4 basis-7/12" src={image1} alt={title} /> */}
 
         <div className="w-full basis-5/12 flex flex-col p-4">
@@ -74,14 +75,12 @@ export default function ProductDetail() {
             ${price}
           </p> */}
           <p>
-            <span className="text-4xl">{`$${(price * (1 - discount)).toFixed(
-              0
-            )}`}</span>
+            <span className="text-4xl">{`$${discount_price}`}</span>
             <span> </span>
             <span className="line-through text-gray-500">{`    $${price}`}</span>
             <span> </span>
             <span className="bg-brand text-white p-2 rounded-sm ">
-              {discount * 100}% off
+              {100 - discount}% off
             </span>
           </p>
           <div className="flex items-center">

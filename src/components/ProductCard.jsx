@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 export default function ProductCard({
   product,
-  product: { id, image, title, category, price, image1 },
+  product: { id, image, title, category, price, image1, discount_price },
 }) {
   const navigate = useNavigate();
-  const discount = 0.4;
+  const discount = parseInt((discount_price / price) * 100, 10);
 
   //   console.log("PRODUCT: ", product);
 
@@ -26,12 +26,10 @@ export default function ProductCard({
         <h3 className="truncate">{title}</h3>
         <div>
           <p className="bg-brand text-white p-2 rounded-sm flex justify-center">
-            {discount * 100}% off
+            {100 - discount}% off
           </p>
           <p>
-            <span className="text-3xl">{`$${(price * (1 - discount)).toFixed(
-              0
-            )}`}</span>
+            <span className="text-3xl">{`$${discount_price}`}</span>
             <span> </span>
             <span className="line-through text-gray-500">{`    $${price}`}</span>
           </p>
